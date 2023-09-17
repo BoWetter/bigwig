@@ -1,0 +1,163 @@
+/* Grundinställningar för sidan */
+body, html {
+    margin: 0;
+    padding: 0;
+    font-family: Arial, sans-serif;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: url('image3.png') center / cover no-repeat fixed;
+}
+
+/* Definiera en variabel för blur-värdet */
+:root {
+    --blur-value: 10px;
+}
+
+/* Applicera blur-effekten på boxarna och dropdown-label */
+.box, .dropdown-label {
+    backdrop-filter: blur(var(--blur-value));
+}
+/* Applicera blur-effekten på boxarna och dropdown-label */
+.box {
+    backdrop-filter: blur(var(--blur-value));
+    -webkit-backdrop-filter: blur(var(--blur-value)); /* För äldre versioner av Safari */
+}
+
+
+/* Stil för bakgrundsbehållaren */
+.background {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
+    height: 100vh;
+    padding-top: 5px;
+}
+
+/* Stil för huvudmenyn */
+.menu {
+    display: flex;
+    gap: 20px;
+    width: 100%;
+    height: 50px;
+    background: rgba(255, 255, 255, 0.1); /* Lätt genomskinlig vit bakgrund */
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    margin-bottom: 10px; 
+    border-radius: 10px;
+    z-index: 20; 
+    backdrop-filter: blur(var(--blur-value)); /* Lägg till blur-effekten */
+    -webkit-backdrop-filter: blur(var(--blur-value)); /* För äldre versioner av Safari */
+}
+
+/* Grundstil för dropdown */
+.dropdown {
+    position: relative;
+    display: inline-block;
+    z-index: 30; 
+ 
+}
+
+/* Stil för den synliga delen av dropdown */
+.dropdown-label {
+    padding: 10px 20px;
+    border-radius: 10px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+    background: none; /* Ta bort bakgrundsfärg */
+    box-shadow: none;
+    color: black;
+    backdrop-filter: none; /* Ta bort denna rad */
+    -webkit-backdrop-filter: none; /* Ta bort denna rad */
+}
+
+/* Lägg till en hover-effekt för .dropdown-label */
+.dropdown-label:hover {
+    background-color: #f0f0f0;
+}
+
+/* Visa dropdown-innehållet när man hovrar över dropdown */
+.dropdown:hover .dropdown-content {
+    display: block;
+}
+
+/* Stil för den dolda delen av dropdown */
+.dropdown-content {
+    display: none;
+    position: absolute;
+    background-color: white;
+    min-width: 160px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    z-index: 30;
+    border-radius: 10px;
+}
+
+/* Stil för länkarna inuti dropdown-innehållet */
+.dropdown-content a {
+    color: black;
+    padding: 12px 16px;
+    text-decoration: none;
+    display: block;
+}
+
+/* Hover-effekt för dropdown-menylänkarna */
+.dropdown-content a:hover {
+    background-color: #f0f0f0;
+}
+
+/* Stil för innehållsbehållaren med boxarna */
+.content {
+    display: flex;
+    gap: 20px;
+}
+
+/* Grundstil för boxarna */
+.box {
+    width: 250px;
+    height: 250px;
+    background: rgba(255, 255, 255, 0.1);
+    border-radius: 10px;
+    padding: 15px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+/* Stil för vikingbilden */
+.viking-image {
+    max-width: 100%;
+    max-height: 100%;
+    display: block;
+    margin: auto;
+    border-radius: 10px;
+}
+
+/* Ta bort liststil för svarsalternativen */
+.answer-list {
+    list-style-type: none;
+    padding: 0;
+}
+
+/* Stil för knappgruppen under frågan */
+.btn-group {
+    display: flex;
+    gap: 10px;
+    align-items: center;
+    justify-content: center;
+    margin-top: 10px;
+}
+
+/* Grundstil för knapparna */
+.answer-btn, .nav-btn {
+    padding: 5px 15px;
+    background-color: rgba(255, 255, 255, 0.1);
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+/* Hover-effekt för knapparna */
+.answer-btn:hover, .nav-btn:hover {
+    background-color: rgba(255, 255, 255, 0.2);
+}
