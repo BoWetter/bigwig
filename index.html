@@ -1,90 +1,96 @@
 <!DOCTYPE html>
-<html>
-  <head>
-    <meta charset="utf-8">
-    <title>Progate</title>
-  </head>
-  <body>
-    <h1 class="title">Din Studdybuddy</h1>
-  </body>
-  <div>
-    <label >Välj Årskurs</label>
-    <select name="make" hx-get="/models" hx-target="#models" hx-indicator=".htmx-indicator">
-      <option value="audi">Årskurs 4</option>
-      <option value="toyota">Årskurs 5</option>
-      <option value="bmw">Årskurs 6</option>
-      <option value="bmw">Årskurs 7</option>
-      <option value="bmw">Årskurs 8</option>
-      <option value="bmw">Årskurs 9</option>
-    </select>
-  </div>
-  <div>
-    <label >Välj ämne</label>
-    <select name="make" hx-get="/models" hx-target="#models" hx-indicator=".htmx-indicator">
-      <option value="audi">Engelska</option>
-      <option value="toyota">Historia</option>
-      <option value="bmw">Tyska</option>
-      <option value="bmw">Biologi</option>
-      <option value="bmw">Fysik</option>
-    </select>
-  </div>
-  <div>
-    <label>Välj Område</label>
-    <select id="models" name="model">
-      <option value="a1">Forntiden i Norden</option>
-      <option value="a1">Vikingatiden och slutet på järnåldern</option>
-      <option value="a1">Det kristna Norden på medeltiden</option>
-      <option value="a1">Livet på medeltiden</option>
-      <option value="a1">De som bestämde på medeltiden</option>
-      <option value="a1">Historia i Europa</option>
-      <option value="a1">Vasatiden och den svenska staten</option>
-      <option value="a1">Stormaktstiden för Östersjöriket Sverige</option>
-      <option value="a1">Sverige på 1700-talet</option>
-      <option value="a1">Sverige på 1800-talet</option>
-      <option value="a1">Nya tider i världen</option>
-      
-      
-    </select>
+<html lang="sv">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Historia</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="background">
+  <!-- ... (resten av koden ovanför förblir oförändrad) ... -->
+
+<!-- Huvudmeny -->
+<div class="menu">
+    <!-- Första dropdown: Årskurs -->
+    <div class="dropdown">
+        <div class="dropdown-label">Årskurs</div>
+        <div class="dropdown-content">
+            <a href="#">Årskurs 4</a>
+            <a href="#">Årskurs 5</a>
+            <a href="#">Årskurs 6</a>
+            <a href="#">Årskurs 7</a>
+            <a href="#">Årskurs 8</a>
+            <a href="#">Årskurs 9</a>
+            <!-- ... andra länkar ... -->
+        </div>
+    </div>
+    <!-- Andra dropdown: Ämne -->
+    <div class="dropdown">
+        <div class="dropdown-label">Ämne</div>
+        <div class="dropdown-content">
+            <a href="#">Engelska</a>
+            <a href="#">Historia</a>
+            <!-- ... andra länkar ... -->
+        </div>
+    </div>
+    <!-- Tredje dropdown: Område -->
+    <div class="dropdown">
+        <div class="dropdown-label">Område</div>
+        <div class="dropdown-content">
+            <a href="#">Forntiden i Norden</a>
+            <a href="#">Vikingatiden och slutet på järnåldern</a>
+            <!-- ... andra länkar ... -->
+        </div>
+    </div>
+      <!-- Fjärde dropdown: Område -->
+      <div class="dropdown">
+        <div class="dropdown-label">Språk</div>
+        <div class="dropdown-content">
+            <a href="#">Engelska</a>
+            <a href="#">Danska</a>
+            <!-- ... andra länkar ... -->
+        </div>
+    </div>
+      <!-- Tredje dropdown: Område -->
+      <div class="dropdown">
+        <div class="dropdown-label">Inställningar</div>
+        <div class="dropdown-content">
+            <a href="#">Min sida</a>
+            <a href="#">Abonemang</a>
+            <!-- ... andra länkar ... -->
+        </div>
+    </div>
+    <!-- ... (resten av koden nedanför förblir oförändrad) ... -->
 </div>
 
-<h5 class="title">Which Viking explorer is believed to have reached North America before Christopher Columbus?</h5>
-<IMG SRC="image.jpg"  HEIGHT="150" WIDTH="200">
-<form id="checked-contacts">
-    <table>
-      <thead>
+<!-- ... (resten av koden nedanför förblir oförändrad) ... -->
 
-      </thead>
-      <tbody id="tbody">
-        <tr class="">
-          <td><input type='checkbox' name='ids' value='0'></td>
-          <td>Leif Erikson</td>
-         
-        </tr>
-        <tr class="">
-          <td><input type='checkbox' name='ids' value='0'></td>
-          <td>Amerigo Vespucci</td>
-        
-        </tr>
-        <tr class="">
-          <td><input type='checkbox' name='ids' value='0'></td>
-          
-          <td>Marco Polo</td>
-        
-        </tr>
-        <tr class="">
-          <td><input type='checkbox' name='ids' value='0'></td>
-          <td>Christopher Columbus</td>
-         
-        </tr>
-        
-      
-      </tbody>
-    </table>
-    <div hx-include="#checked-contacts" hx-target="#tbody">
-      <button class="btn" hx-put="/activate">SEND</button>
-   
+
+        <!-- Innehållsdel med boxar -->
+        <div class="content">
+            <!-- Frågebox -->
+            <div class="box box1">
+               
+
+                <p>Which Viking explorer is believed to have reached North America before Christopher Columbus?</p>
+                <ul class="answer-list">
+                    <li><input type="checkbox" id="leif" name="explorer"><label for="leif"> Leif Erikson</label></li>
+                    <li><input type="checkbox" id="amerigo" name="explorer"><label for="amerigo"> Amerigo Vespucci</label></li>
+                    <li><input type="checkbox" id="marco" name="explorer"><label for="marco"> Marco Polo</label></li>
+                    <li><input type="checkbox" id="christopher" name="explorer"><label for="christopher"> Christopher Columbus</label></li>
+                </ul>
+                <div class="btn-group">
+                    <button class="nav-btn"><</button>
+                    <button class="answer-btn">Svara</button>
+                    <button class="nav-btn">></button>
+                </div>
+            </div>
+            <!-- Bildbox -->
+            <div class="box box2">
+                <img src="viking.png" alt="Bild" class="viking-image">
+            </div>
+        </div>
     </div>
-</form>
-
-
+</body>
 </html>
