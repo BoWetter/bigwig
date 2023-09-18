@@ -1,4 +1,4 @@
-/* Grundinställningar för sidan */
+/* GrundinstÃ¤llningar fÃ¶r sidan */
 body, html {
     margin: 0;
     padding: 0;
@@ -10,23 +10,23 @@ body, html {
 }
 
 
-/* Definiera en variabel för blur-värdet */
+/* Definiera en variabel fÃ¶r blur-vÃ¤rdet */
 :root {
     --blur-value: 10px;
 }
 
-/* Applicera blur-effekten på boxarna och dropdown-label */
+/* Applicera blur-effekten pÃ¥ boxarna och dropdown-label */
 .box, .dropdown-label {
     backdrop-filter: blur(var(--blur-value));
 }
-/* Applicera blur-effekten på boxarna och dropdown-label */
+/* Applicera blur-effekten pÃ¥ boxarna och dropdown-label */
 .box {
     backdrop-filter: blur(var(--blur-value));
-    -webkit-backdrop-filter: blur(var(--blur-value)); /* För äldre versioner av Safari */
+    -webkit-backdrop-filter: blur(var(--blur-value)); /* FÃ¶r Ã¤ldre versioner av Safari */
 }
 
 
-/* Stil för bakgrundsbehållaren */
+/* Stil fÃ¶r bakgrundsbehÃ¥llaren */
 .background {
     display: flex;
     flex-direction: column;
@@ -36,24 +36,24 @@ body, html {
     padding-top: 5px;
 }
 
-/* Stil för huvudmenyn */
+/* Stil fÃ¶r huvudmenyn */
 .menu {
     display: flex;
     gap: 20px;
     width: 100%;
     height: 50px;
-    background: rgba(255, 255, 255, 0.1); /* Lätt genomskinlig vit bakgrund */
+    background: rgba(255, 255, 255, 0.1); /* LÃ¤tt genomskinlig vit bakgrund */
     align-items: center;
     justify-content: center;
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
     margin-bottom: 10px; 
     border-radius: 10px;
     z-index: 20; 
-    backdrop-filter: blur(var(--blur-value)); /* Lägg till blur-effekten */
-    -webkit-backdrop-filter: blur(var(--blur-value)); /* För äldre versioner av Safari */
+    backdrop-filter: blur(var(--blur-value)); /* LÃ¤gg till blur-effekten */
+    -webkit-backdrop-filter: blur(var(--blur-value)); /* FÃ¶r Ã¤ldre versioner av Safari */
 }
 
-/* Grundstil för dropdown */
+/* Grundstil fÃ¶r dropdown */
 .dropdown {
     position: relative;
     display: inline-block;
@@ -61,30 +61,30 @@ body, html {
  
 }
 
-/* Stil för den synliga delen av dropdown */
+/* Stil fÃ¶r den synliga delen av dropdown */
 .dropdown-label {
     padding: 10px 20px;
     border-radius: 10px;
     cursor: pointer;
     transition: background-color 0.3s;
-    background: none; /* Ta bort bakgrundsfärg */
+    background: none; /* Ta bort bakgrundsfÃ¤rg */
     box-shadow: none;
     color: black;
     backdrop-filter: none; /* Ta bort denna rad */
     -webkit-backdrop-filter: none; /* Ta bort denna rad */
 }
 
-/* Lägg till en hover-effekt för .dropdown-label */
+/* LÃ¤gg till en hover-effekt fÃ¶r .dropdown-label */
 .dropdown-label:hover {
     background-color: #f0f0f0;
 }
 
-/* Visa dropdown-innehållet när man hovrar över dropdown */
+/* Visa dropdown-innehÃ¥llet nÃ¤r man hovrar Ã¶ver dropdown */
 .dropdown:hover .dropdown-content {
     display: block;
 }
 
-/* Stil för den dolda delen av dropdown */
+/* Stil fÃ¶r den dolda delen av dropdown */
 .dropdown-content {
     display: none;
     position: absolute;
@@ -95,7 +95,7 @@ body, html {
     border-radius: 10px;
 }
 
-/* Stil för länkarna inuti dropdown-innehållet */
+/* Stil fÃ¶r lÃ¤nkarna inuti dropdown-innehÃ¥llet */
 .dropdown-content a {
     color: black;
     padding: 12px 16px;
@@ -103,18 +103,18 @@ body, html {
     display: block;
 }
 
-/* Hover-effekt för dropdown-menylänkarna */
+/* Hover-effekt fÃ¶r dropdown-menylÃ¤nkarna */
 .dropdown-content a:hover {
     background-color: #f0f0f0;
 }
 
-/* Stil för innehållsbehållaren med boxarna */
+/* Stil fÃ¶r innehÃ¥llsbehÃ¥llaren med boxarna */
 .content {
     display: flex;
     gap: 20px;
 }
 
-/* Grundstil för boxarna */
+/* Grundstil fÃ¶r boxarna */
 .box {
     width: 250px;
     height: 300px;
@@ -122,16 +122,16 @@ body, html {
     border-radius: 10px;
     padding: 15px;
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-    flex: 1; /* Tvingar båda boxarna att vara lika stora */
+    flex: 1; /* Tvingar bÃ¥da boxarna att vara lika stora */
 }
-/* Stil för knappgruppen inom box2 */
+/* Stil fÃ¶r knappgruppen inom box2 */
 .box2 .btn-group {
-    display: flex; /* Använd flex för att centrera knapparna horisontellt */
+    display: flex; /* AnvÃ¤nd flex fÃ¶r att centrera knapparna horisontellt */
     justify-content: center; /* Centrera knapparna horisontellt */
     align-items: center; /* Centrera knapparna vertikalt */
-    height: 40px; /* Sätt en fast höjd för knappgruppen */
+    height: 40px; /* SÃ¤tt en fast hÃ¶jd fÃ¶r knappgruppen */
 }
-/* Stil för vikingbilden */
+/* Stil fÃ¶r vikingbilden */
 .viking-image {
     max-width: 100%;
     max-height: 100%;
@@ -140,13 +140,13 @@ body, html {
     border-radius: 10px;
 }
 
-/* Ta bort liststil för svarsalternativen */
+/* Ta bort liststil fÃ¶r svarsalternativen */
 .answer-list {
     list-style-type: none;
     padding: 0;
 }
 
-/* Stil för knappgruppen under frågan */
+/* Stil fÃ¶r knappgruppen under frÃ¥gan */
 .btn-group {
     display: flex;
     gap: 10px;
@@ -155,7 +155,7 @@ body, html {
     margin-top: 10px;
 }
 
-/* Grundstil för knapparna */
+/* Grundstil fÃ¶r knapparna */
 .answer-btn, .nav-btn {
     padding: 5px 15px;
     background-color: rgba(255, 255, 255, 0.1);
@@ -165,15 +165,15 @@ body, html {
     transition: background-color 0.3s;
 }
 
-/* Hover-effekt för knapparna */
+/* Hover-effekt fÃ¶r knapparna */
 .answer-btn:hover, .nav-btn:hover {
     background-color: rgba(255, 255, 255, 0.2);
 }
 .viking-video {
     width: 100%; /* Se till att videon tar upp hela boxens bredd */
-    height: calc(100% - 40px); /* Låt videon ta upp hela höjden minus utrymme för knapparna */
+    height: calc(100% - 40px); /* LÃ¥t videon ta upp hela hÃ¶jden minus utrymme fÃ¶r knapparna */
     display: block;
     margin: auto;
-    object-fit: cover; /* Behåller videons aspektförhållning */
-    border-radius: 10px; /* För att matcha boxens rundade hörn */
+    object-fit: cover; /* BehÃ¥ller videons aspektfÃ¶rhÃ¥llning */
+    border-radius: 10px; /* FÃ¶r att matcha boxens rundade hÃ¶rn */
 }
