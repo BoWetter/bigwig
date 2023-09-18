@@ -9,6 +9,7 @@ body, html {
     background: url('image3.png') center / cover no-repeat fixed;
 }
 
+
 /* Definiera en variabel för blur-värdet */
 :root {
     --blur-value: 10px;
@@ -116,13 +117,20 @@ body, html {
 /* Grundstil för boxarna */
 .box {
     width: 250px;
-    height: 250px;
+    height: 300px;
     background: rgba(255, 255, 255, 0.1);
     border-radius: 10px;
     padding: 15px;
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    flex: 1; /* Tvingar båda boxarna att vara lika stora */
 }
-
+/* Stil för knappgruppen inom box2 */
+.box2 .btn-group {
+    display: flex; /* Använd flex för att centrera knapparna horisontellt */
+    justify-content: center; /* Centrera knapparna horisontellt */
+    align-items: center; /* Centrera knapparna vertikalt */
+    height: 40px; /* Sätt en fast höjd för knappgruppen */
+}
 /* Stil för vikingbilden */
 .viking-image {
     max-width: 100%;
@@ -160,4 +168,12 @@ body, html {
 /* Hover-effekt för knapparna */
 .answer-btn:hover, .nav-btn:hover {
     background-color: rgba(255, 255, 255, 0.2);
+}
+.viking-video {
+    width: 100%; /* Se till att videon tar upp hela boxens bredd */
+    height: calc(100% - 40px); /* Låt videon ta upp hela höjden minus utrymme för knapparna */
+    display: block;
+    margin: auto;
+    object-fit: cover; /* Behåller videons aspektförhållning */
+    border-radius: 10px; /* För att matcha boxens rundade hörn */
 }
