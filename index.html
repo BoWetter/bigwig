@@ -5,6 +5,20 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Historia</title>
     <link rel="stylesheet" href="styles.css">
+    <script>
+        // Lägg till en "DOMContentLoaded"-händelse för att säkerställa att allt laddas korrekt innan skriptet körs
+        document.addEventListener('DOMContentLoaded', function() {
+            document.getElementById('playButton').addEventListener('click', function() {
+                var video = document.getElementById('vikingVideo');
+                video.play();
+            });
+
+            document.getElementById('pauseButton').addEventListener('click', function() {
+                var video = document.getElementById('vikingVideo');
+                video.pause();
+            });
+        });
+    </script>
 </head>
 <body>
     <div class="background">
@@ -88,8 +102,21 @@
             </div>
             <!-- Bildbox -->
             <div class="box box2">
-                <img src="viking.png" alt="Bild" class="viking-image">
+                <video id="vikingVideo" class="viking-video" loop muted>
+                    <source src="viking.mp4" type="video/mp4">
+                    Din webbläsare stöder inte video-taggen.
+                </video>
+                
+                <div class="btn-group">
+                    <button id="playButton" class="answer-btn">Spela</button>
+                    <button id="pauseButton" class="answer-btn">Pausa</button>
+
+
+                </div>
             </div>
+        </div>
+           
+            
         </div>
     </div>
 </body>
