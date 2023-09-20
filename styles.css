@@ -1,78 +1,48 @@
-/* GrundinstÃ¤llningar */
-body, html {
-    margin: 0;
-    padding: 0;
-    font-family: Arial, sans-serif;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    background: url('image3.png') center / cover no-repeat fixed;
+/* Grundinställningar för bild sidan */
+body {
+    font-family: 'Poppins', sans-serif; /* Typsnitt */
+    margin: 0; /* Tar bort standardmarginal */
+    padding: 0; /* Tar bort standardpadding */
+    background-color: white; /* Vit bakgrundsfärg */
 }
 
-/* Variabler */
-:root {
-    --blur-value: 10px;
-}
-
-/* BakgrundsbehÃ¥llare */
-.background {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: flex-start;
-    height: 100vh;
-    padding-top: 5px;
-}
-
-/* Huvudmeny */
+/* Stil för huvudmenyn */
 .menu {
-    display: flex;
-    gap: 2px;
-    width: 100%;
-    height: 50px;
-    background: rgba(255, 255, 255, 0.1);
-    align-items: center;
-    justify-content: center;
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-    margin-bottom: 10px; 
-    border-radius: 10px;
-    z-index: 30;  
-    backdrop-filter: blur(var(--blur-value));
-    -webkit-backdrop-filter: blur(var(--blur-value));
+    display: flex; 
+    justify-content: flex-end; 
+    padding-top: 30px; /* Justera detta värde för att ändra avståndet från länkarean till toppen av sidan */
+    padding-bottom: 0px; /* Justera detta värde för att ändra avståndet från länkarean till linjen under */
+    border-bottom: 1px solid gray; 
 }
 
-/* Dropdown */
-.dropdown {
-    position: relative;
-    display: inline-block;
-    z-index: 10;  /* LÃ¤gg till denna rad */
+.menu-item {
+    position: relative; /* Gör det möjligt att positionera dropdown-innehållet relativt till detta element */
+    margin-left: 20px; /* Justera detta värde för att ändra avståndet mellan länkarna */
+    text-decoration: none; 
+    color: gray; 
+    position: relative; 
+    line-height: 20px; /* Justera detta värde för att ändra avståndet från länkarna till linjen under */
 }
 
-.dropdown-label {
-    padding: 10px 20px;
-    border-radius: 10px;
-    cursor: pointer;
-    transition: background-color 0.3s;
-    background: none;
-    box-shadow: none;
-    color: black;
+
+.menu-item:last-child {
+    margin-right: 30px; /* Eller vilket avstånd från sista länken till högerkanten. */
 }
 
-.dropdown-label:hover {
-    background-color: #f0f0f0;
-    margin-bottom: 0;  
-}
 
+.menu-item:hover {
+    color: black; /* Svart textfärg när pekaren är över länken */
+}
 .dropdown-content {
-    display: none;
-    position: absolute;
+    display: none; /* Dölj innehållet initialt */
+    position: absolute; /* Positionera det ovanpå andra element */
+    top: 100%; /* Just under menyelementet */
+    left: 0;
     background-color: white;
-    min-width: 160px;
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-    z-index: 20;  /* Ã„ndra detta vÃ¤rde till 20 */
-    border-radius: 10px;
-    top: 100%;  /* LÃ¤gg till denna rad */
-    margin-top: 0;  /* LÃ¤gg till denna rad */
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+    z-index: 1;
+    top: calc(100% + 1px); /* Lägger till 1px för att kompensera för linjens tjocklek */
+    white-space: nowrap;  /* att förbli på en rad */
 }
 
 .dropdown-content a {
@@ -81,74 +51,59 @@ body, html {
     text-decoration: none;
     display: block;
 }
-
-.dropdown-content a:hover {
-    background-color: #f0f0f0;
-    display: block;
+.menu-item:hover .dropdown-content {
+    display: block; /* Visa dropdown-innehållet när man håller musen över menyelementet */
 }
 
 
-
-
-
-/* InnehÃ¥llsboxar */
-.content {
-    display: flex;
-    gap: 20px;
-    margin-top: 20px;
+.menu-item::after {
+    content: ''; /* Tomt innehåll för att skapa en linje */
+    position: absolute; /* Absolut positionering */
+    bottom: -1px; /* Placering precis under texten */
+    left: 0; /* Vänsterjustering */
+    width: 100%; /* Full bredd av länken */
+    height: 2px; /* Linjens tjocklek */
+    background-color: black; /* Svart färg på linjen */
+    transform: scaleX(0); /* Dölj linjen initialt */
+    transform-origin: right; /* Startpunkt för skalning */
+    transition: transform 0.3s ease; /* Övergångseffekt */
 }
 
-.box {
-    position: relative;    
-    width: 250px;
-    height: 300px;
-    background: rgba(255, 255, 255, 0.1);
-    border-radius: 10px;
-    padding: 15px;
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-    flex: 1;
-    backdrop-filter: blur(var(--blur-value));
-    -webkit-backdrop-filter: blur(var(--blur-value));
-    z-index: 5;  /* LÃ¤gg till denna rad */
+.menu-item:hover::after {
+    transform: scaleX(1); /* Visar linjen när pekaren är över länken */
+    transform-origin: left; /* Ändrar startpunkt för skalning */
 }
 
-/* Knappgrupper */
-.btn-group {
-    display: flex;
-    gap: 10px;
-    align-items: center;
-    justify-content: center;
-    position: absolute;
-    bottom: 10px;
-    left: 50%;
-    transform: translateX(-50%);
-}
-
-.answer-btn, .nav-btn {
-    padding: 5px 15px;
-    background-color: rgba(255, 255, 255, 0.1);
-    border: none;
-    border-radius: 5px;
-    cursor: pointer;
-    transition: background-color 0.3s;
-}
-
-.answer-btn:hover, .nav-btn:hover {
-    background-color: rgba(255, 255, 255, 0.2);
-}
-
-/* Video */
-.viking-video {
-    width: 100%;
-    height: calc(100% - 40px);
-    display: block;
-    margin: auto;
-    object-fit: cover;
-    border-radius: 10px;
-}
-
-/* Ã–vriga stilar */
 .answer-list {
-    list-style-type: none;
-    padding: 0;
+    list-style-type: none; /* Tar bort bullet points */
+    padding: 0; /* Tar bort standardpadding */
+    margin: 0; /* Tar bort standardmarginal */
+}
+
+/* Stil för huvudinnehållet */
+.content {
+    display: flex; /* Flexbox för att placera boxarna horisontellt */
+    gap: 20px; /* Avstånd mellan boxarna */
+    padding: 20px; /* Inre marginal för innehållet */
+}
+
+/* Gemensam stil för båda boxarna */
+.box {
+    flex: 1; /* Boxarna tar lika mycket plats */
+    padding: 20px; /* Inre marginal för boxarna */
+    background-color: white; /* Vit bakgrundsfärg */
+}
+
+/* Stil för bildboxen */
+.box1 img {
+    max-width: 100%; /* Begränsar bildens bredd till boxens bredd */
+    display: block; /* Tar bort eventuell marginal under bilden */
+    margin: auto; /* Centrerar bilden */
+}
+
+.box2 {
+    border: 1px solid gray; /* Grå ram runt boxen */
+    width: 300px;  /* Bredd på box2 */
+    height: 300px; /* Höjd på box2 */
+
 }
