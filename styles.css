@@ -9,13 +9,14 @@ body {
 /* Stil för huvudmenyn */
 .menu {
     display: flex; 
-    justify-content: flex-end; 
-    padding-top: 30px; /* Justera detta värde för att ändra avståndet från länkarean till toppen av sidan */
-    padding-bottom: 0px; /* Justera detta värde för att ändra avståndet från länkarean till linjen under */
+    justify-content: flex-start; /* Meny till höger av sidan */
+    padding-top: 20px; /* Justera detta värde för att ändra avståndet från länkarean till toppen av sidan */
+    padding-bottom: 10px; /* Justera detta värde för att ändra avståndet från länkarean till linjen under */
     border-bottom: 1px solid gray; 
 }
 
 .menu-item {
+    padding-bottom: 5px; /* Lägg till lite extra padding på botten */
     position: relative; /* Gör det möjligt att positionera dropdown-innehållet relativt till detta element */
     margin-left: 20px; /* Justera detta värde för att ändra avståndet mellan länkarna */
     text-decoration: none; 
@@ -33,24 +34,30 @@ body {
 .menu-item:hover {
     color: black; /* Svart textfärg när pekaren är över länken */
 }
+
+
 .dropdown-content {
+  
     display: none; /* Dölj innehållet initialt */
     position: absolute; /* Positionera det ovanpå andra element */
-    top: 100%; /* Just under menyelementet */
     left: 0;
-    background-color: white;
-    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
-    z-index: 1;
-    top: calc(100% + 1px); /* Lägger till 1px för att kompensera för linjens tjocklek */
+    background-color: white; /* Behåll vit bakgrundsfärg */
+    top: calc(100% + 4px); /* Justera detta värde för att kompensera för den extra paddingen */
     white-space: nowrap;  /* att förbli på en rad */
+    border: 1px solid gray; /* Lägg till en grå linje runt dropdown-menyn */
+    z-index: 1;
 }
 
+
 .dropdown-content a {
-    color: black;
+    display: block !important;
+    color: grey;
     padding: 12px 16px;
     text-decoration: none;
     display: block;
 }
+
+
 .menu-item:hover .dropdown-content {
     display: block; /* Visa dropdown-innehållet när man håller musen över menyelementet */
 }
@@ -59,14 +66,14 @@ body {
 .menu-item::after {
     content: ''; /* Tomt innehåll för att skapa en linje */
     position: absolute; /* Absolut positionering */
-    bottom: -1px; /* Placering precis under texten */
+    bottom: -10px; /* Placering precis under texten */
     left: 0; /* Vänsterjustering */
     width: 100%; /* Full bredd av länken */
     height: 2px; /* Linjens tjocklek */
     background-color: black; /* Svart färg på linjen */
     transform: scaleX(0); /* Dölj linjen initialt */
     transform-origin: right; /* Startpunkt för skalning */
-    transition: transform 0.3s ease; /* Övergångseffekt */
+    transition: transform 0.2s ease; /* Övergångseffekt */
 }
 
 .menu-item:hover::after {
@@ -92,6 +99,7 @@ body {
     flex: 1; /* Boxarna tar lika mycket plats */
     padding: 20px; /* Inre marginal för boxarna */
     background-color: white; /* Vit bakgrundsfärg */
+    color: solid gray;
 }
 
 /* Stil för bildboxen */
