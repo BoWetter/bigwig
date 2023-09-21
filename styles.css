@@ -1,6 +1,15 @@
 /* Grundinställningar för bild sidan */
+
+
+.material-symbols-outlined {
+  font-variation-settings: 'FILL' 0, 'wght' 300, 'GRAD' 0, 'opsz' 24;
+}
+
+
+
 body {
-    font-family: 'Poppins', sans-serif; /* Typsnitt */
+   
+ font-family: 'Montserrat', sans-serif; /* Typsnitt */
     margin: 0; /* Tar bort standardmarginal */
     padding: 0; /* Tar bort standardpadding */
     background-color: white; /* Vit bakgrundsfärg */
@@ -11,11 +20,12 @@ body {
     display: flex; 
     justify-content: flex-start; /* Meny till höger av sidan */
     padding-top: 20px; /* Justera detta värde för att ändra avståndet från länkarean till toppen av sidan */
-    padding-bottom: 10px; /* Justera detta värde för att ändra avståndet från länkarean till linjen under */
+    padding-bottom: 0px; /* Justera detta värde för att ändra avståndet från länkarean till linjen under */
     border-bottom: 1px solid gray; 
 }
 
 .menu-item {
+    font-size: 16px;  /* Ändra detta värde för att justera storleken */
     padding-bottom: 5px; /* Lägg till lite extra padding på botten */
     position: relative; /* Gör det möjligt att positionera dropdown-innehållet relativt till detta element */
     margin-left: 20px; /* Justera detta värde för att ändra avståndet mellan länkarna */
@@ -42,7 +52,7 @@ body {
     position: absolute; /* Positionera det ovanpå andra element */
     left: 0;
     background-color: white; /* Behåll vit bakgrundsfärg */
-    top: calc(100% + 4px); /* Justera detta värde för att kompensera för den extra paddingen */
+    top: calc(100% 5px); /* Justera detta värde för att kompensera för den extra paddingen */
     white-space: nowrap;  /* att förbli på en rad */
     border: 1px solid gray; /* Lägg till en grå linje runt dropdown-menyn */
     z-index: 1;
@@ -50,23 +60,26 @@ body {
 
 
 .dropdown-content a {
+    font-size: 14px;  /* Ändra detta värde för att justera storleken */
     display: block !important;
     color: grey;
-    padding: 12px 16px;
+    padding: 3px 20px;
     text-decoration: none;
+    margin-bottom: 0px;  /* Justera detta värde efter önskemål */
+}
+
+
+
+.menu-item.active .dropdown-content {
     display: block;
 }
 
-
-.menu-item:hover .dropdown-content {
-    display: block; /* Visa dropdown-innehållet när man håller musen över menyelementet */
-}
 
 
 .menu-item::after {
     content: ''; /* Tomt innehåll för att skapa en linje */
     position: absolute; /* Absolut positionering */
-    bottom: -10px; /* Placering precis under texten */
+    bottom: -1px; /* Justerat värde för att matcha tjockleken på den långa linjen */
     left: 0; /* Vänsterjustering */
     width: 100%; /* Full bredd av länken */
     height: 2px; /* Linjens tjocklek */
@@ -81,6 +94,10 @@ body {
     transform-origin: left; /* Ändrar startpunkt för skalning */
 }
 
+.dropdown-content a:hover {
+  color: black !important;  /* Eller vilken färg du nu vill ha när du hovrar */
+}
+
 .answer-list {
     list-style-type: none; /* Tar bort bullet points */
     padding: 0; /* Tar bort standardpadding */
@@ -93,25 +110,59 @@ body {
     gap: 20px; /* Avstånd mellan boxarna */
     padding: 20px; /* Inre marginal för innehållet */
 }
+.box-container {
+    flex: 1; /* Tar upp samma utrymme som de andra boxarna */
+    display: flex;
+    flex-direction: column; /* Staplar boxarna vertikalt */
+}
+
 
 /* Gemensam stil för båda boxarna */
 .box {
-    flex: 1; /* Boxarna tar lika mycket plats */
+   /*  flex: 1; Boxarna tar lika mycket plats */
     padding: 20px; /* Inre marginal för boxarna */
     background-color: white; /* Vit bakgrundsfärg */
     color: solid gray;
 }
 
+
+.box1 {
+    height: 600px; /* Höjd på box1 */
+    overflow: hidden; /* Gömmer delar av bilden som går utanför boxen */
+}
+
 /* Stil för bildboxen */
 .box1 img {
-    max-width: 100%; /* Begränsar bildens bredd till boxens bredd */
-    display: block; /* Tar bort eventuell marginal under bilden */
-    margin: auto; /* Centrerar bilden */
+    max-width: 100%;
+    max-height: 100%;
+    display: block;
+    margin: auto;
 }
+
+ 
+.box2, .box3 {
+    /* flex: 1;  Ta bort eller kommentera ut denna rad */
+     width: 400px;  /*  Bredd på box2 */
+}
+
 
 .box2 {
     border: 1px solid gray; /* Grå ram runt boxen */
-    width: 300px;  /* Bredd på box2 */
-    height: 300px; /* Höjd på box2 */
-
+    border-bottom: none; /* Ta bort den nedre gränsen */
+    margin-top: 50px;  /* Flyttar boxen 50px nedåt */
+    padding-top: 10px;
+    padding-right: 20px;
+    padding-bottom: 20px;
+    padding-left: 20px;
+    width: 400px;  /* Fast bredd */
 }
+
+.box3 {
+    border: 1px solid gray; /* Grå ram runt boxen */
+    padding-top: 10px;
+    padding-right: 20px;
+    padding-bottom: 20px;
+    padding-left: 20px;
+}
+
+
