@@ -6,35 +6,94 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Historical Page</title>
     <link rel="stylesheet" href="styles.css">
+   
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
 </head>
 
 <body>
-    <!-- Huvudmeny med länkar -->
-    <div class="menu">
-        <div class="menu-item">
-            Årskurs
-            <div class="dropdown-content">
-                <a href="#">Årskurs 4</a>
-                <a href="#">Årskurs 5</a>
-                <!-- ... andra länkar ... -->
-            </div>
-        </div>  <!-- Stäng div för "Årskurs" här -->
-        <a href="#" class="menu-item">Ämne</a>
-        <a href="#" class="menu-item">Område</a>
-        <a href="#" class="menu-item">Språk</a>
-        <a href="#" class="menu-item">Tolk</a>
-        <a href="#" class="menu-item">Inställningar</a>
+<!-- Huvudmeny med länkar -->
+<div class="menu">
+    <div class="menu-item" onclick="toggleDropdown(this)">
+        Årskurs
+        <div class="dropdown-content">
+            <a href="#">Årskurs 4</a>
+            <a href="#">Årskurs 5</a>
+            <a href="#">Årskurs 6</a>
+            <a href="#">Årskurs 7</a>
+            <a href="#">Årskurs 8</a>
+            <a href="#">Årskurs 9</a>
+        </div>
+    </div>  <!-- Stäng div för "Årskurs" här -->
+
+    <div class="menu-item" onclick="toggleDropdown(this)">
+        Ämne
+        <div class="dropdown-content">
+            <a href="#">Historia</a>
+            <a href="#">Biologi</a>
+            <a href="#">Fysik</a>
+            <a href="#">Engelska</a>
+            <a href="#">Kemi</a>
+        </div>
     </div>
+
+    <div class="menu-item" onclick="toggleDropdown(this)">
+        Område
+        <div class="dropdown-content">
+            <a href="#">Forntiden i Norden</a>
+            <a href="#">Livet på medeltiden</a>
+            <a href="#">Stormaktstiden för Östersjöriket Sverige</a>
+            <a href="#">Sverige på 1700-talet</a>
+        </div>
+    </div>
+
+    <div class="menu-item" onclick="toggleDropdown(this)">
+        Språk
+        <div class="dropdown-content">
+            <a href="#">Engelska</a>
+            <a href="#">Tyska</a>
+            <a href="#">Svenska</a>
+            <a href="#">Arabiska</a>
+        </div>
+    </div>
+
+    <div class="menu-item" onclick="toggleDropdown(this)">
+        Tolk
+        <div class="dropdown-content">
+            <a href="#">Lorem ipsum 1</a>
+            <a href="#">Lorem ipsum 2</a>
+            <a href="#">Lorem ipsum 3</a>
+        </div>
+    </div>
+
+    <div class="menu-item" onclick="toggleDropdown(this)">
+        <span class="material-symbols-outlined"> settings </span>
+            
+        <div class="dropdown-content">
+            <a href="#">Min sida</a>
+            <a href="#">Mina betalningar</a>
+            <a href="#">Lorem ipsum 3</a>
+        </div>
+    </div>
+    
+</div>
 
     <!-- Huvudinnehåll med två boxar -->
     <div class="content">
-       
-
-          <!-- Bildbox -->
-          <div class="box box1">
-            <img src="https://i.imgur.com/8DIZpAZ.png" alt="Viking Image">
+        <!-- Bildbox -->
+        <div class="box box1">
+            <span class="material-symbols-outlined"> image</span>
+            <span class="material-symbols-outlined">play_circle </span>
+            <img src="viking_photo.png" alt="Viking Image">
+           
         </div>
-          <!-- Svarsalternativ -->
+       
+         <!-- Container för box2 och box3 -->
+    <div class="box-container">
+        <!-- Svarsalternativ -->
         <div class="box box2">
             <p>Which Viking explorer is believed to have reached North America before Christopher Columbus?</p>
             <ul class="answer-list">
@@ -44,9 +103,36 @@
                 <li><input type="checkbox" id="christopher" name="explorer"><label for="christopher"> Christopher Columbus</label></li>
             </ul>
         </div>
+        <!-- Ny box under box2 -->
+<div class="box box3">
+    <p>The Viking explorer believed to have reached North America before Christopher Columbus is Leif Erikson. He is thought to have landed in what is now Newfoundland, Canada, around the year 1000 AD, almost 500 years before Columbus arrived in the Americas.</p>
+</div>
 
-      
     </div>
+    <script>
+        function toggleDropdown(element) {
+            var dropdown = element.querySelector('.dropdown-content');
+            if (dropdown.style.display === 'block') {
+                dropdown.style.display = 'none';
+            } else {
+                // Dölj alla andra dropdown-menyer
+                document.querySelectorAll('.dropdown-content').forEach(function(d) {
+                    d.style.display = 'none';
+                });
+                dropdown.style.display = 'block';
+            }
+        }
+    
+        // Dölj dropdown-menyn när man klickar någon annanstans på sidan
+        document.addEventListener('click', function(event) {
+            if (!event.target.closest('.menu-item')) {
+                document.querySelectorAll('.dropdown-content').forEach(function(d) {
+                    d.style.display = 'none';
+                });
+            }
+        });
+    </script>
+    
 </body>
 
 </html>
