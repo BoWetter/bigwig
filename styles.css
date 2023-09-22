@@ -21,7 +21,9 @@ body {
     justify-content: flex-start; /* Meny till höger av sidan */
     padding-top: 20px; /* Justera detta värde för att ändra avståndet från länkarean till toppen av sidan */
     padding-bottom: 0px; /* Justera detta värde för att ändra avståndet från länkarean till linjen under */
-    border-bottom: solid #808080; 
+    /* border-bottom: solid #808080; */
+     border-bottom: #4267B2;
+      background-color:  #4267B2;
 }
 
 .menu-item {
@@ -30,7 +32,7 @@ body {
     position: relative; /* Gör det möjligt att positionera dropdown-innehållet relativt till detta element */
     margin-left: 20px; /* Justera detta värde för att ändra avståndet mellan länkarna */
     text-decoration: none; 
-    color: gray; 
+    color: white; 
     position: relative; 
     line-height: 20px; /* Justera detta värde för att ändra avståndet från länkarna till linjen under */
 }
@@ -51,21 +53,23 @@ body {
     display: none; /* Dölj innehållet initialt */
     position: absolute; /* Positionera det ovanpå andra element */
     left: 0;
-    background-color: white; /* Behåll vit bakgrundsfärg */
+    background-color: #4267B2; /* Behåll vit bakgrundsfärg */
     top: calc(100% + 5px); /* Justera detta värde för att kompensera för den extra paddingen */
     white-space: nowrap;  /* att förbli på en rad */
     border: 1px solid gray; /* Lägg till en grå linje runt dropdown-menyn */
     z-index: 1;
+    border-radius: 10px;
 }
 
 
 .dropdown-content a {
     font-size: 14px;  /* Ändra detta värde för att justera storleken */
     display: block !important;
-    color: grey;
+    color: white;
     padding: 3px 20px;
     text-decoration: none;
     margin-bottom: 0px;  /* Justera detta värde efter önskemål */
+
 }
 
 
@@ -102,6 +106,7 @@ body {
     list-style-type: none; /* Tar bort bullet points */
     padding: 0; /* Tar bort standardpadding */
     margin: 0; /* Tar bort standardmarginal */
+    color: black !important;
 }
 
 /* Main content style */
@@ -119,10 +124,10 @@ body {
 
 /* Common style for all boxes */
 .box {
-    padding: 20px;            /* 20px inner padding for each box */
+    /* padding: 20px;             20px inner padding for each box */
     background-color: white;  /* Sets the background to white */
-    color: gray;              /* Text inside the box will be gray */
-  
+    color: black;              /* Text inside the box will be black */
+      
 }
 
 /* Specific style for the first box */
@@ -130,7 +135,13 @@ body {
     height: 600px;        /* Sets the height of the box */
     overflow: hidden;     /* Hides any overflowing content */
     margin-right: 20px; 
-    max-width: 600px; 
+    margin-left: 20px; 
+    Margin-top: 40px; 
+    max-width: 500px; 
+    border: 1px solid black; 
+    border-radius: 10px;
+   
+    
 }
 
 /* Style for images inside the first box */
@@ -139,29 +150,32 @@ body {
     height: auto;       /* Image height scales with width */
     display: block;     /* Makes the image a block-level element */
     margin: auto;       /* Centers the image */
+    
 }
 
-/* Specific styles for the second and third boxes */
+
 .box2, .box3 {
     width: 400px;                    /* Sets the width of the boxes */
     display: flex;                   /* Flexbox to arrange any potential children */
     flex-direction: column;          /* Aligns children vertically */
     justify-content: flex-start;     /* Aligns children to the start of the flex container */
     padding-top: 0px;                /* No padding at the top */
-    margin-right: 20px;  /* Lägger till en 20px marginal på höger sida */
+    margin-right: 20px;         /* Lägger till en 20px marginal på höger sida */
+   /*   border-radius: 10px; */
+
 }
 
-/* Additional specific style for the second box */
+
 .box2 {
-    border: 1px solid #808080;  /* Adds a medium gray border */
-    border-bottom: none;         /* Removes the bottom border */
-    margin-top: 50px;            /* Pushes the box down by 50px */
-    padding: 0px 20px 20px 20px; /* Shorthand for padding */
+   /*  border: 1px solid #808080;  Adds a medium gray border */
+    border-bottom: 1px solid black;        /* Removes the bottom border */
+    margin-top: 50px;                    /* Pushes the box down by 50px */
+    padding: 0px 20px 20px 20px;          /* Shorthand for padding */
 }
 
-/* Additional specific style for the third box */
+
 .box3 {
-    border: 1px solid #808080;  /* Adds a medium gray border */
+   /* border: 1px solid #808080;   Adds a medium gray border */
     padding: 0px 20px 20px 20px; /* Shorthand for padding */
 }
 
@@ -173,12 +187,14 @@ body {
     
 }
 
-/* Button group style */
+/* Button group style 
 .btn-group {
     display: flex;             /* Flexbox to arrange buttons */
     gap: 20px;                 /* 20px gap between each button */
     align-items: center;       /* Aligns buttons vertically centered */
     justify-content: center;   /* Centers buttons horizontally */
+    Color: #4267B2;
+
 }
 
 
@@ -186,16 +202,16 @@ body {
 .answer-btn, .nav-btn {
     padding: 3px 10px;
     background-color: white;   /* Vit bakgrund */
-    color: grey;
+    color: #4267B2;
     border: none;               
-      /*   border: 1px solid gray;  */
+    border: 1px #4267B2;
     border-radius: 5px;
     cursor: pointer;
     transition: background-color 0.3s, color 0.3s;
 }
 
 .answer-btn:hover, .nav-btn:hover {
-    background-color: gray; /* Grå bakgrund vid hover */
+    background-color: #4267B2;; /* Grå bakgrund vid hover */
     color: white; /* Vit text vid hover */
 }
 
@@ -218,5 +234,5 @@ body {
   width: 100%;  /* Eller den bredd du önskar */
   height: 700px;  /* Eller den höjd du önskar */
   object-fit: cover; /* Samma som tidigare, för att fylla hela utrymmet */
-   
+  
 }
