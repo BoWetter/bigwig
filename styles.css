@@ -21,7 +21,7 @@ body {
     justify-content: flex-start; /* Meny till höger av sidan */
     padding-top: 20px; /* Justera detta värde för att ändra avståndet från länkarean till toppen av sidan */
     padding-bottom: 0px; /* Justera detta värde för att ändra avståndet från länkarean till linjen under */
-    border-bottom: 1px solid gray; 
+    border-bottom: solid #808080; 
 }
 
 .menu-item {
@@ -52,7 +52,7 @@ body {
     position: absolute; /* Positionera det ovanpå andra element */
     left: 0;
     background-color: white; /* Behåll vit bakgrundsfärg */
-    top: calc(100% 5px); /* Justera detta värde för att kompensera för den extra paddingen */
+    top: calc(100% + 5px); /* Justera detta värde för att kompensera för den extra paddingen */
     white-space: nowrap;  /* att förbli på en rad */
     border: 1px solid gray; /* Lägg till en grå linje runt dropdown-menyn */
     z-index: 1;
@@ -104,72 +104,116 @@ body {
     margin: 0; /* Tar bort standardmarginal */
 }
 
-/* Stil för huvudinnehållet */
+/* Main content style */
 .content {
-    display: flex; /* Flexbox för att placera boxarna horisontellt */
-    gap: 20px; /* Avstånd mellan boxarna */
-    padding: 20px; /* Inre marginal för innehållet */
+    display: flex; /* Arranges children horizontally */
+    gap: 20px;     /* Creates a 20px gap between children */
 }
+
+/* A container that contains boxes */
 .box-container {
-    flex: 1; /* Tar upp samma utrymme som de andra boxarna */
-    display: flex;
-    flex-direction: column; /* Staplar boxarna vertikalt */
+    flex: 1;                   /* Occupies all available space relative to its flex siblings */
+    display: flex;             /* Flexbox to arrange its children */
+    flex-direction: column;    /* Stacks its children vertically */
 }
 
-
-/* Gemensam stil för båda boxarna */
+/* Common style for all boxes */
 .box {
-   /*  flex: 1; Boxarna tar lika mycket plats */
-    padding: 20px; /* Inre marginal för boxarna */
-    background-color: white; /* Vit bakgrundsfärg */
-    color: solid gray;
+    padding: 20px;            /* 20px inner padding for each box */
+    background-color: white;  /* Sets the background to white */
+    color: gray;              /* Text inside the box will be gray */
+  
 }
 
-
+/* Specific style for the first box */
 .box1 {
-    height: 600px; /* Höjd på box1 */
-    overflow: hidden; /* Gömmer delar av bilden som går utanför boxen */
+    height: 600px;        /* Sets the height of the box */
+    overflow: hidden;     /* Hides any overflowing content */
+    margin-right: 20px; 
+    max-width: 600px; 
 }
 
-/* Stil för bildboxen */
+/* Style for images inside the first box */
 .box1 img {
-    max-width: 100%;
-    height: auto;: 100%;
-    display: block;
-    margin: auto;
+    max-width: 100%;    /* Image width will not exceed box width */
+    height: auto;       /* Image height scales with width */
+    display: block;     /* Makes the image a block-level element */
+    margin: auto;       /* Centers the image */
 }
 
- 
+/* Specific styles for the second and third boxes */
 .box2, .box3 {
-    /* flex: 1;  Ta bort eller kommentera ut denna rad */
-     width: 400px;  /*  Bredd på box2 */
+    width: 400px;                    /* Sets the width of the boxes */
+    display: flex;                   /* Flexbox to arrange any potential children */
+    flex-direction: column;          /* Aligns children vertically */
+    justify-content: flex-start;     /* Aligns children to the start of the flex container */
+    padding-top: 0px;                /* No padding at the top */
+    margin-right: 20px;  /* Lägger till en 20px marginal på höger sida */
 }
 
-
+/* Additional specific style for the second box */
 .box2 {
-    border: 1px solid gray; /* Grå ram runt boxen */
-    border-bottom: none; /* Ta bort den nedre gränsen */
-    margin-top: 50px;  /* Flyttar boxen 50px nedåt */
-    padding-top: 10px;
-    padding-right: 20px;
-    padding-bottom: 20px;
-    padding-left: 20px;
-    width: 400px;  /* Fast bredd */
+    border: 1px solid #808080;  /* Adds a medium gray border */
+    border-bottom: none;         /* Removes the bottom border */
+    margin-top: 50px;            /* Pushes the box down by 50px */
+    padding: 0px 20px 20px 20px; /* Shorthand for padding */
 }
 
+/* Additional specific style for the third box */
 .box3 {
-    border: 1px solid gray; /* Grå ram runt boxen */
-    padding-top: 10px;
-    padding-right: 20px;
-    padding-bottom: 20px;
-    padding-left: 20px;
+    border: 1px solid #808080;  /* Adds a medium gray border */
+    padding: 0px 20px 20px 20px; /* Shorthand for padding */
 }
+
+/* Style for centering content */
+.center-container {
+    display: flex;              /* Flexbox for arranging children */
+    justify-content: left;      /* Aligns children to the left */
+    align-items: center;        /* Aligns items vertically in the center */
+    
+}
+
+/* Button group style */
+.btn-group {
+    display: flex;             /* Flexbox to arrange buttons */
+    gap: 20px;                 /* 20px gap between each button */
+    align-items: center;       /* Aligns buttons vertically centered */
+    justify-content: center;   /* Centers buttons horizontally */
+}
+
 
 
 .center-container {
-            display: flex;
-            justify-content: left;
-            align-items: center;
-             bottom: 50%; 
+       display: flex;
+       justify-content: left;
+       align-items: center;
+       bottom: 50%; 
            
 }
+
+/* Knappgrupper */
+.btn-group {
+    display: flex;
+    gap: 20px;
+    align-items: center;
+    justify-content: center;
+    
+ 
+}
+
+.answer-btn, .nav-btn {
+    padding: 3px 10px;
+    background-color: white;   /* Vit bakgrund */
+    color: grey;
+    border: none;               
+      /*   border: 1px solid gray;  */
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s, color 0.3s;
+}
+
+.answer-btn:hover, .nav-btn:hover {
+    background-color: gray; /* Grå bakgrund vid hover */
+    color: white; /* Vit text vid hover */
+}
+
