@@ -12,7 +12,54 @@
     <link href="https://fonts.googleapis.com/css2?family=Montserrat&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
-    
+  <script>
+// Vi väntar tills hela dokumentet är laddat. Detta är som att vänta tills ugnen är förvärmd innan du stoppar in pajen.
+document.addEventListener("DOMContentLoaded", function() {
+
+// Lägger till en lyssnare för klick på 'imageIcon'. Tänk dig detta som "tryck här för att starta ugnen".
+document.getElementById('imageIcon').addEventListener('click', function() {
+    // När ikonen klickas, kör 'toggleMedia' med 'image' som parameter.
+    toggleMedia('image');
+});
+
+// Samma som ovan men för 'videoIcon'. "Och här för att stoppa ugnen."
+document.getElementById('videoIcon').addEventListener('click', function() {
+    toggleMedia('video');
+});
+
+// Definition av vår 'toggleMedia' funktion. Detta är som vårt recept för pajen.
+function toggleMedia(type) {
+    // Hämta HTML-element för både bild och video. Dessa är som våra ingredienser.
+    var image = document.getElementById('staticImage');
+    var video = document.getElementById('videoPlayer');
+
+    // Om typen är 'image', visa bilden och göm videon.
+    if (type === 'image') {
+        image.style.display = 'block';
+        video.style.display = 'none';
+        // Om videon spelas, pausa den. Detta är som att sätta locket på pannan så inget kokar över.
+        if (!video.paused) {
+            video.pause();
+        }
+    // Om typen är 'video', göm bilden och visa videon.
+    } else if (type === 'video') {
+        image.style.display = 'none';
+        video.style.display = 'block';
+        // Spela videon. Detta är som att sätta igång mixern.
+        video.play();
+    }
+}
+});
+// Anta att 'staticImage' är ditt bild-element och 'videoPlayer' är ditt videoelement.
+var image = document.getElementById('staticImage');
+var video = document.getElementById('videoPlayer');
+
+video.style.width = image.offsetWidth + 'px';
+video.style.height = image.offsetHeight + 'px';
+
+
+
+    </script>
 </head>
 
 <body>
@@ -84,13 +131,20 @@
 
     <!-- Huvudinnehåll med två boxar -->
     <div class="content">
-        <!-- Bildbox -->
-        <div class="box box1">
-            <span class="material-symbols-outlined"> image</span>
-            <span class="material-symbols-outlined">play_circle </span>
-            <img src="viking_photo.png" alt="Viking Image">
-           
-        </div>
+<!-- Bildbox -->
+<div class="box box1">
+    <span id="imageIcon" class="material-symbols-outlined"> image</span>
+    <span id="videoIcon" class="material-symbols-outlined">play_circle </span>
+
+    <div class="media-container">
+        <img id="staticImage" src="viking_photo.png" alt="Viking Image">
+        <video id="videoPlayer" controls>
+            <source src="Video.mp4" type="video/mp4">
+        </video>
+    </div>
+</div>
+
+
        
          <!-- Container för box2 och box3 -->
     <div class="box-container">
@@ -141,7 +195,7 @@
             }
         });
     </script>
-    
+
 </body>
 
 </html>
